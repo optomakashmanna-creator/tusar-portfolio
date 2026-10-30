@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { Rocket, ArrowRight } from 'lucide-react';
-import { cn } from '../lib/utils';
 
 export default function HeroSection() {
   const { isAntiGravity } = useTheme();

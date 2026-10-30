@@ -19,7 +19,7 @@ function Particles() {
     return pos;
   }, []);
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (pointsRef.current) {
       if (isAntiGravity) {
         // Floating upwards faster in anti-gravity mode
@@ -52,6 +52,7 @@ function Points({ positions, children, ref }: { positions: Float32Array, childre
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
+          args={[positions, 3]}
           count={positions.length / 3}
           array={positions}
           itemSize={3}
