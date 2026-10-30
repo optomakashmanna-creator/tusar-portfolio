@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #020617;
+  --color-secondary: #0F172A;
+  --color-primary: #06B6D4;
+  --color-accent: #8B5CF6;
+  --color-highlight: #EC4899;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #94A3B8;
+  --color-glass: rgba(255, 255, 255, 0.05);
+
+  --font-sans: 'Orbitron', 'Inter', system-ui, sans-serif;
+  --font-display: 'Orbitron', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans antialiased overflow-x-hidden;
+    margin: 0;
+    padding: 0;
+    cursor: none; /* For custom cursor */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+.glass-panel {
+  @apply bg-glass backdrop-blur-md border border-white/10 rounded-2xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-highlight;
+}
